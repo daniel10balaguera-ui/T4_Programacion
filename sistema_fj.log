@@ -1,0 +1,169 @@
+
+======================================================================
+  INICIO DE SESIÓN — 2026-05-10 00:51:35
+======================================================================
+
+======================================================================
+  SOFTWARE FJ — SISTEMA DE GESTIÓN — 2026-05-10 00:51:35
+======================================================================
+
+======================================================================
+  BLOQUE 1 — Registro de Clientes — 2026-05-10 00:51:35
+======================================================================
+[2026-05-10 00:51:35] [ÉXITO   ] Cliente registrado: Cliente[C001] | Nombre: Ana Gómez | Email: ana.gomez@email.com | Tel: 3101234567 | Reservas: 0
+[2026-05-10 00:51:35] [ÉXITO   ] Cliente registrado: Cliente[C002] | Nombre: Luis Martínez | Email: luis.m@empresa.co | Tel: +57 310 9876543 | Reservas: 0
+[2026-05-10 00:51:35] [ERROR   ] REGISTRO DE CLIENTE FALLIDO → [ERR_CLIENTE] El email 'sara.reyes@unad.edu.co' no tiene un formato válido.
+[2026-05-10 00:51:35] [ERROR   ] REGISTRO DE CLIENTE FALLIDO → [ERR_CLIENTE] El email 'correo-sin-arroba' no tiene un formato válido.
+[2026-05-10 00:51:35] [ERROR   ] REGISTRO DE CLIENTE FALLIDO → [ERR_CLIENTE] El nombre debe tener al menos 3 caracteres.
+[2026-05-10 00:51:35] [ERROR   ] REGISTRO DE CLIENTE FALLIDO → [ERR_CLIENTE] El teléfono 'abc' no tiene un formato válido.
+
+======================================================================
+  BLOQUE 2 — Creación de Servicios — 2026-05-10 00:51:35
+======================================================================
+[2026-05-10 00:51:35] [ÉXITO   ] Servicio registrado: ReservaSala[S001] | Sala Innovación | $80,000/h | ✔ Disponible | Cap. 10 personas | con proyector
+[2026-05-10 00:51:35] [ÉXITO   ] Servicio registrado: ReservaSala[S002] | Sala Ejecutiva | $60,000/h | ✔ Disponible | Cap. 6 personas | sin proyector
+[2026-05-10 00:51:35] [ÉXITO   ] Servicio registrado: AlquilerEquipo[E001] | Laptop HP ProBook | $25,000/h | ✔ Disponible | Tipo: Laptop | Stock: 5 uds.
+[2026-05-10 00:51:35] [ÉXITO   ] Servicio registrado: AsesoriaTecnica[A001] | Asesoría en Inteligencia Artificial | $120,000/h | ✔ Disponible | Área: Inteligencia Artificial | Consultor: Dr. Carlos Mendoza
+[2026-05-10 00:51:35] [ERROR   ] Servicio inválido detectado correctamente → [ERR_SERVICIO] El precio por hora debe ser un número positivo (recibido: -5000).
+[2026-05-10 00:51:35] [ERROR   ] Servicio inválido detectado correctamente → [ERR_SERVICIO] La capacidad máxima debe ser un entero positivo (recibido: 0).
+
+======================================================================
+  BLOQUE 3 — Gestión de Reservas — 2026-05-10 00:51:35
+======================================================================
+[2026-05-10 00:51:35] [INFO    ] OP13: Reserva válida sala con proyector
+[2026-05-10 00:51:35] [INFO    ] Reserva creada (PENDIENTE): Reserva[9E3DE62E] | Ana Gómez | Sala Innovación | PENDIENTE
+[2026-05-10 00:51:35] [INFO    ] Reserva CONFIRMADA | Costo: $197,064.00 COP | Reserva[9E3DE62E] | Ana Gómez | Sala Innovación | CONFIRMADA
+[2026-05-10 00:51:35] [ÉXITO   ] Reserva 9E3DE62E procesada exitosamente. Servicio: Sala Innovación. Duración: 2.0h. Costo final: $197,064.00 COP.
+[2026-05-10 00:51:35] [INFO    ] OP14: Reserva válida alquiler de equipo
+[2026-05-10 00:51:35] [INFO    ] Reserva creada (PENDIENTE): Reserva[E0DC6928] | Luis Martínez | Laptop HP ProBook | PENDIENTE
+[2026-05-10 00:51:35] [INFO    ] Reserva CONFIRMADA | Costo: $93,712.50 COP | Reserva[E0DC6928] | Luis Martínez | Laptop HP ProBook | CONFIRMADA
+[2026-05-10 00:51:35] [ÉXITO   ] Reserva E0DC6928 procesada exitosamente. Servicio: Laptop HP ProBook. Duración: 3.0h. Costo final: $93,712.50 COP.
+[2026-05-10 00:51:35] [INFO    ] OP15: Reserva válida asesoría IA
+[2026-05-10 00:51:35] [ERROR   ] Cliente 'C003' no encontrado. Reserva abortada.
+[2026-05-10 00:51:35] [INFO    ] OP16: Reserva fallida — demasiados asistentes
+[2026-05-10 00:51:35] [INFO    ] Reserva creada (PENDIENTE): Reserva[A483BAB1] | Ana Gómez | Sala Ejecutiva | PENDIENTE
+[2026-05-10 00:51:35] [ERROR   ] Error del sistema → [ERR_SERVICIO] La sala 'Sala Ejecutiva' tiene capacidad para 6 personas, pero se solicitaron 20 asistentes.
+[2026-05-10 00:51:35] [INFO    ] OP17: Reserva fallida — stock insuficiente
+[2026-05-10 00:51:35] [INFO    ] Reserva creada (PENDIENTE): Reserva[C8DCC88C] | Luis Martínez | Laptop HP ProBook | PENDIENTE
+[2026-05-10 00:51:35] [ERROR   ] Servicio no disponible → [ERR_NO_DISPONIBLE] No hay suficientes unidades de 'Laptop HP ProBook'. Disponibles: 5, solicitadas: 99.
+[2026-05-10 00:51:35] [INFO    ] OP18: Reserva fallida — duración inferior al mínimo en asesoría
+[2026-05-10 00:51:35] [ERROR   ] Cliente 'C003' no encontrado. Reserva abortada.
+[2026-05-10 00:51:35] [INFO    ] OP19: Reserva fallida — cliente no existe
+[2026-05-10 00:51:35] [ERROR   ] Cliente 'C999' no encontrado. Reserva abortada.
+[2026-05-10 00:51:35] [INFO    ] OP20: Reserva fallida — horas inválidas
+[2026-05-10 00:51:35] [ERROR   ] Reserva inválida → [ERR_RESERVA] Las horas deben ser un número positivo (recibido: 0).
+
+======================================================================
+  BLOQUE 4 — Operaciones No Permitidas — 2026-05-10 00:51:35
+======================================================================
+[2026-05-10 00:51:35] [INFO    ] OP21: Intentar cancelar reserva en estado 'PROCESADA'
+[2026-05-10 00:51:35] [ERROR   ] Operación bloqueada correctamente → [ERR_OPERACION] Operación 'cancelar' no permitida cuando el estado es 'PROCESADA'
+
+======================================================================
+  BLOQUE 5 — Variantes de Cálculo de Costos — 2026-05-10 00:51:35
+======================================================================
+[2026-05-10 00:51:35] [INFO    ] Comparativa de cálculo de costos para Sala Innovación (3h):
+[2026-05-10 00:51:35] [INFO    ]   Con IVA (19%):                     $  328,440.00 COP
+[2026-05-10 00:51:35] [INFO    ]   Sin IVA:                           $  276,000.00 COP
+[2026-05-10 00:51:35] [INFO    ]   Con IVA + 15% descuento:           $  279,174.00 COP
+[2026-05-10 00:51:35] [INFO    ]   Con IVA personalizado (5%):        $  289,800.00 COP
+
+======================================================================
+  RESUMEN FINAL DEL SISTEMA — 2026-05-10 00:51:35
+======================================================================
+[2026-05-10 00:51:35] [INFO    ] Clientes registrados exitosamente : 2
+[2026-05-10 00:51:35] [INFO    ] Servicios registrados exitosamente: 4
+[2026-05-10 00:51:35] [INFO    ] Reservas gestionadas              : 3
+[2026-05-10 00:51:35] [INFO    ]   → Procesadas exitosamente       : 2
+[2026-05-10 00:51:35] [INFO    ]   → Canceladas / Fallidas         : 0
+[2026-05-10 00:51:35] [INFO    ] Log completo guardado en          : sistema_fj.log
+
+======================================================================
+  FIN DE EJECUCIÓN — 2026-05-10 00:51:35
+======================================================================
+
+======================================================================
+  INICIO DE SESIÓN — 2026-05-10 00:51:54
+======================================================================
+
+======================================================================
+  SOFTWARE FJ — SISTEMA DE GESTIÓN — 2026-05-10 00:51:54
+======================================================================
+
+======================================================================
+  BLOQUE 1 — Registro de Clientes — 2026-05-10 00:51:54
+======================================================================
+[2026-05-10 00:51:54] [ÉXITO   ] Cliente registrado: Cliente[C001] | Nombre: Ana Gómez | Email: ana.gomez@email.com | Tel: 3101234567 | Reservas: 0
+[2026-05-10 00:51:54] [ÉXITO   ] Cliente registrado: Cliente[C002] | Nombre: Luis Martínez | Email: luis.m@empresa.co | Tel: +57 310 9876543 | Reservas: 0
+[2026-05-10 00:51:54] [ÉXITO   ] Cliente registrado: Cliente[C003] | Nombre: Sara Reyes | Email: sara.reyes@unad.edu.co | Tel: 3209876543 | Reservas: 0
+[2026-05-10 00:51:54] [ERROR   ] REGISTRO DE CLIENTE FALLIDO → [ERR_CLIENTE] El email 'correo-sin-arroba' no tiene un formato válido.
+[2026-05-10 00:51:54] [ERROR   ] REGISTRO DE CLIENTE FALLIDO → [ERR_CLIENTE] El nombre debe tener al menos 3 caracteres.
+[2026-05-10 00:51:54] [ERROR   ] REGISTRO DE CLIENTE FALLIDO → [ERR_CLIENTE] El teléfono 'abc' no tiene un formato válido.
+
+======================================================================
+  BLOQUE 2 — Creación de Servicios — 2026-05-10 00:51:54
+======================================================================
+[2026-05-10 00:51:54] [ÉXITO   ] Servicio registrado: ReservaSala[S001] | Sala Innovación | $80,000/h | ✔ Disponible | Cap. 10 personas | con proyector
+[2026-05-10 00:51:54] [ÉXITO   ] Servicio registrado: ReservaSala[S002] | Sala Ejecutiva | $60,000/h | ✔ Disponible | Cap. 6 personas | sin proyector
+[2026-05-10 00:51:54] [ÉXITO   ] Servicio registrado: AlquilerEquipo[E001] | Laptop HP ProBook | $25,000/h | ✔ Disponible | Tipo: Laptop | Stock: 5 uds.
+[2026-05-10 00:51:54] [ÉXITO   ] Servicio registrado: AsesoriaTecnica[A001] | Asesoría en Inteligencia Artificial | $120,000/h | ✔ Disponible | Área: Inteligencia Artificial | Consultor: Dr. Carlos Mendoza
+[2026-05-10 00:51:54] [ERROR   ] Servicio inválido detectado correctamente → [ERR_SERVICIO] El precio por hora debe ser un número positivo (recibido: -5000).
+[2026-05-10 00:51:54] [ERROR   ] Servicio inválido detectado correctamente → [ERR_SERVICIO] La capacidad máxima debe ser un entero positivo (recibido: 0).
+
+======================================================================
+  BLOQUE 3 — Gestión de Reservas — 2026-05-10 00:51:54
+======================================================================
+[2026-05-10 00:51:54] [INFO    ] OP13: Reserva válida sala con proyector
+[2026-05-10 00:51:54] [INFO    ] Reserva creada (PENDIENTE): Reserva[E3A77EBE] | Ana Gómez | Sala Innovación | PENDIENTE
+[2026-05-10 00:51:54] [INFO    ] Reserva CONFIRMADA | Costo: $197,064.00 COP | Reserva[E3A77EBE] | Ana Gómez | Sala Innovación | CONFIRMADA
+[2026-05-10 00:51:54] [ÉXITO   ] Reserva E3A77EBE procesada exitosamente. Servicio: Sala Innovación. Duración: 2.0h. Costo final: $197,064.00 COP.
+[2026-05-10 00:51:54] [INFO    ] OP14: Reserva válida alquiler de equipo
+[2026-05-10 00:51:54] [INFO    ] Reserva creada (PENDIENTE): Reserva[DDDE0918] | Luis Martínez | Laptop HP ProBook | PENDIENTE
+[2026-05-10 00:51:54] [INFO    ] Reserva CONFIRMADA | Costo: $93,712.50 COP | Reserva[DDDE0918] | Luis Martínez | Laptop HP ProBook | CONFIRMADA
+[2026-05-10 00:51:54] [ÉXITO   ] Reserva DDDE0918 procesada exitosamente. Servicio: Laptop HP ProBook. Duración: 3.0h. Costo final: $93,712.50 COP.
+[2026-05-10 00:51:54] [INFO    ] OP15: Reserva válida asesoría IA
+[2026-05-10 00:51:54] [INFO    ] Reserva creada (PENDIENTE): Reserva[B205F457] | Sara Reyes | Asesoría en Inteligencia Artificial | PENDIENTE
+[2026-05-10 00:51:54] [INFO    ] Reserva CONFIRMADA | Costo: $571,200.00 COP | Reserva[B205F457] | Sara Reyes | Asesoría en Inteligencia Artificial | CONFIRMADA
+[2026-05-10 00:51:54] [ÉXITO   ] Reserva B205F457 procesada exitosamente. Servicio: Asesoría en Inteligencia Artificial. Duración: 4.0h. Costo final: $571,200.00 COP.
+[2026-05-10 00:51:54] [INFO    ] OP16: Reserva fallida — demasiados asistentes
+[2026-05-10 00:51:54] [INFO    ] Reserva creada (PENDIENTE): Reserva[6E389819] | Ana Gómez | Sala Ejecutiva | PENDIENTE
+[2026-05-10 00:51:54] [ERROR   ] Error del sistema → [ERR_SERVICIO] La sala 'Sala Ejecutiva' tiene capacidad para 6 personas, pero se solicitaron 20 asistentes.
+[2026-05-10 00:51:54] [INFO    ] OP17: Reserva fallida — stock insuficiente
+[2026-05-10 00:51:54] [INFO    ] Reserva creada (PENDIENTE): Reserva[E0F9064B] | Luis Martínez | Laptop HP ProBook | PENDIENTE
+[2026-05-10 00:51:54] [ERROR   ] Servicio no disponible → [ERR_NO_DISPONIBLE] No hay suficientes unidades de 'Laptop HP ProBook'. Disponibles: 5, solicitadas: 99.
+[2026-05-10 00:51:54] [INFO    ] OP18: Reserva fallida — duración inferior al mínimo en asesoría
+[2026-05-10 00:51:54] [INFO    ] Reserva creada (PENDIENTE): Reserva[E2BE5C0A] | Sara Reyes | Asesoría en Inteligencia Artificial | PENDIENTE
+[2026-05-10 00:51:54] [ERROR   ] Error del sistema → [ERR_SERVICIO] La asesoría requiere mínimo 1.0 hora(s). Se solicitaron 0.3 hora(s).
+[2026-05-10 00:51:54] [INFO    ] OP19: Reserva fallida — cliente no existe
+[2026-05-10 00:51:54] [ERROR   ] Cliente 'C999' no encontrado. Reserva abortada.
+[2026-05-10 00:51:54] [INFO    ] OP20: Reserva fallida — horas inválidas
+[2026-05-10 00:51:54] [ERROR   ] Reserva inválida → [ERR_RESERVA] Las horas deben ser un número positivo (recibido: 0).
+
+======================================================================
+  BLOQUE 4 — Operaciones No Permitidas — 2026-05-10 00:51:54
+======================================================================
+[2026-05-10 00:51:54] [INFO    ] OP21: Intentar cancelar reserva en estado 'PROCESADA'
+[2026-05-10 00:51:54] [ERROR   ] Operación bloqueada correctamente → [ERR_OPERACION] Operación 'cancelar' no permitida cuando el estado es 'PROCESADA'
+
+======================================================================
+  BLOQUE 5 — Variantes de Cálculo de Costos — 2026-05-10 00:51:54
+======================================================================
+[2026-05-10 00:51:54] [INFO    ] Comparativa de cálculo de costos para Sala Innovación (3h):
+[2026-05-10 00:51:54] [INFO    ]   Con IVA (19%):                     $  328,440.00 COP
+[2026-05-10 00:51:54] [INFO    ]   Sin IVA:                           $  276,000.00 COP
+[2026-05-10 00:51:54] [INFO    ]   Con IVA + 15% descuento:           $  279,174.00 COP
+[2026-05-10 00:51:54] [INFO    ]   Con IVA personalizado (5%):        $  289,800.00 COP
+
+======================================================================
+  RESUMEN FINAL DEL SISTEMA — 2026-05-10 00:51:54
+======================================================================
+[2026-05-10 00:51:54] [INFO    ] Clientes registrados exitosamente : 3
+[2026-05-10 00:51:54] [INFO    ] Servicios registrados exitosamente: 4
+[2026-05-10 00:51:54] [INFO    ] Reservas gestionadas              : 4
+[2026-05-10 00:51:54] [INFO    ]   → Procesadas exitosamente       : 3
+[2026-05-10 00:51:54] [INFO    ]   → Canceladas / Fallidas         : 0
+[2026-05-10 00:51:54] [INFO    ] Log completo guardado en          : sistema_fj.log
+
+======================================================================
+  FIN DE EJECUCIÓN — 2026-05-10 00:51:54
+======================================================================
